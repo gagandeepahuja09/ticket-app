@@ -1,0 +1,25 @@
+apiVersion: skaffold/v2alpha3
+kind: Config
+deploy:
+  kubectl:
+    manifests:
+      # Find all the files inside there
+      - ./infra/k8s/*
+build:
+  local:
+    #Whenever, we build an image, do not try to push it to dockerhub
+    push: false
+  artifacts:
+    - image: gagandeepahuja09/auth
+      #folder name
+      context: auth
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        #What if some files change
+        manual:
+          #All files inside src folder with .ts extension
+            #Source
+          - src: "src/**/*.ts"
+            #Destination
+            dest: .

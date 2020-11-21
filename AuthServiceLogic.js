@@ -27,4 +27,17 @@
   * infra folder --> k8s --> auth-depl.yaml
   * Skaffold config file ---> Goal of Skaffold is to find all the things that we want to 
    throw into our cluster, build them up
+
+#102 Skaffold
+  * It automates many tasks in a Kubernetes dev env.
+  * Makes it really easy to update code in a running pod.
+  * Make it really easy to create /  delete all objects tied to a project at once.
+  * Helps in not having to kubectl apply -f everytime we change a infra / k8s file
+  * artifacts section --> 
+    *  If we try to change a ts file, then it's only going to try to update the pod
+    * If we change anything else, then skaffold will try to rebuild the entire image,
+      example if we add a new module --> package.json, node_modules ---> 
+        This will rebuild the image
+    
+  * 
 */
