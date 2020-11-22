@@ -46,4 +46,33 @@
   * We give it some configuration to describe how we want our configuration to run
     and interact with each other.
   * For installing kubernetes, we just need to open docker and then in preferences --> Kubernetes --> Enable Kubernetes 
+
+#104 Ingress NGINX Controller
+  * Ingress controller for Kubernetes using NGINX as a reverse proxy and load balancer
+  * Nginx --> (Opensource) Web server + Load Balancer + Caching + Reverse Proxying
+  * What is Reverse Proxying?
+  * Apache v/s Nginx
+  * Apache uses a process-driven approach and creates a new thread for each req.
+  * Nginx uses an event-driven architecture to handle multiple requests with one thread.
+
+#79 Load Balancer Services
+  * Option 1: Not a good one --> Expose all microservices using NodePort to the outside world
+  * Option 2: Create a load balancer service --> Have a single point of entry into our entire cluster.
+  * It will reach out to the clusterIP service created for each of these pods.
+  
+  * Ingress / Ingress Controller --> A pod with a set of routing rules to distribute traffic to other services.
+  * Load Balancer Service --> Tells K8 to reach out to its cloud-provider and 
+   provision a load balancer. Gets traffic in to a single pod. 
+  * Outside world -> Load Balancer -> Ingress Controller -> ClusterIP Service -> Pod
+
+#81 Ingress-Nginx
+  * Open source project that will create a load balancer service + an ingress for us.
+  * What is a deployment in K8s?
+    Something that creates and manages a set of pods.
+  * For setup, we are going to do kubectl apply -f.
+  * kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.41.2/deploy/static/provider/cloud/deploy.yaml
+
+#82 Ingress Config Files
+  * Config file will have set of routing rules.
+  *   
 */
