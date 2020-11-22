@@ -40,4 +40,10 @@
         This will rebuild the image
     
   * 
+
+#54 Kubernetes
+  * A tool for running a bunch of containers together. 
+  * We give it some configuration to describe how we want our configuration to run
+    and interact with each other.
+  * For installing kubernetes, we just need to open docker and then in preferences --> Kubernetes --> Enable Kubernetes 
 */
